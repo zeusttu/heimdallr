@@ -15,7 +15,7 @@ async def on_member_join(member):
     msg = (
         ":postal_horn: "
         f"Greetings, {member.mention}. I am Heimdallr, he who stands "
-        "stands over this Server. State your level so that I may grant you "
+        "guard over this Server. State your level so that I may grant you "
         "your right tag. Fear not if you have questions, our moderators "
         "and mentors shall answer them."
     )
