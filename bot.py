@@ -32,8 +32,17 @@ async def on_member_join(member):
 @bot.listen()
 async def on_member_remove(member):
     channel = member.guild.system_channel
-    msg = (f":rainbow: Farewell, {member.display_name}.")
-    await channel.send(f"{msg}")
+    msg = (
+        ":rainbow:"
+        f"Farewell, {member.display_name}. As brave as you may feel it is dangerous "
+        "beyond these halls!"
+    )
+    msg_dk = (
+        ":rainbow:"
+        f"Farvel, {member.display_name}. Så tapper som du end føler du er, "
+        "så er det farligt hinsides disse sale!"
+    )
+    await channel.send(f"{msg}\n\n{msg_dk}")
 
 
 @bot.command()
