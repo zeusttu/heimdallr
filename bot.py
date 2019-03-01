@@ -33,12 +33,12 @@ async def on_member_join(member):
 async def on_member_remove(member):
     channel = member.guild.system_channel
     msg = (
-        ":rainbow:"
+        ":rainbow: "
         f"Farewell, {member.display_name}. As brave as you may feel it is dangerous "
         "beyond these halls!"
     )
     msg_dk = (
-        ":rainbow:"
+        ":rainbow: "
         f"Farvel, {member.display_name}. Så tapper som du end føler du er, "
         "så er det farligt hinsides disse sale!"
     )
