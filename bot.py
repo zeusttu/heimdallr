@@ -15,16 +15,16 @@ async def on_member_join(member):
     msg = (
         ":postal_horn: "
         f"Greetings, {member.mention}. I am Heimdallr, he who stands "
-        "guard over this Server. State your level so that I may grant you "
-        "your right tag. Fear not if you have questions, our moderators "
-        "and mentors shall answer them."
+        "guard over this Server. State your level of Danish so that I may "
+        "grant you your right tag. Fear not if you have questions, our "
+        "moderators and mentors shall answer them."
     )
     msg_dk = (
         ":postal_horn: "
         f"Vær hilset, {member.mention}. Jeg er Heimdallr, han som vogter "
-        "over denne Server. Fortæl mig dit niveau så jeg kan give dig din "
-        "rette tag. Frygt ej hvis du har spørgsmål, for vore moderatorer "
-        "og mentorer skal nok svare på dem."
+        "over denne Server. Fortæl mig dit niveau af dansk så jeg kan give "
+        "dig din rette tag. Frygt ej hvis du har spørgsmål, for vore "
+        "moderatorer og mentorer skal nok svare på dem."
     )
     await channel.send(f"{msg}\n\n{msg_dk}")
 
