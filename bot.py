@@ -1,3 +1,6 @@
+import re
+from bs4 import BeautifulSoup
+import requests
 import os
 from discord.ext import commands
 prefix = '!'
@@ -52,5 +55,35 @@ async def ping(ctx):
     '''
     latency = bot.latency
     await ctx.send(f"Latency: {latency}")
+
+
+@bot.command()
+async def ddo(ctx, *, word: str):
+    '''
+    Run a Den Danske Ordbog query
+    '''
+    payload = {'query': word.strip()}
+    response = requests.get('http://ordnet.dk/ddo/ordbog', params=payload)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    numbers = []
+    for number_div in soup.find_all(class_='definitionNumber'):
+        number = number_div.get_text().strip()
+        if number != '':
+            numbers.append(number)
+
+    definitions_html = soup.find_all(class_='definition')
+
+    definitions = list(map(
+        (lambda html: html.text),
+        definitions_html))
+
+    msg = ""
+    for i in range(len(numbers)):
+        msg += f"**{numbers[i]}** {definitions[i]}\n"
+    if msg == "":
+        msg = "I didn't find anything. May the poison embroid me :skull:"
+    else:
+        msg = "Ah, the Fates are kind. The omniscient All Father hath found thee an answer\n" + msg
+    await ctx.send(msg)
 
 bot.run(os.environ.get('TOKEN'))
