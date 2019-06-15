@@ -16,15 +16,15 @@ async def on_member_join(member):
         ":postal_horn: "
         f"Greetings, {member.mention}. I am Heimdallr, he who stands "
         "guard over this Server. State your level of Danish so that I may "
-        "grant you your right tag. Fear not if you have questions, our "
-        "moderators and mentors shall answer them."
+        "grant you the right role. Fear not if you have questions, our "
+        "moderators and mentors shall gladly answer them."
     )
     msg_dk = (
         ":postal_horn: "
-        f"Vær hilset, {member.mention}. Jeg er Heimdallr, han som vogter "
-        "over denne Server. Fortæl mig dit niveau af dansk så jeg kan give "
-        "dig din rette tag. Frygt ej hvis du har spørgsmål, for vore "
-        "moderatorer og mentorer skal nok svare på dem."
+        f"Vær hilset, {member.mention}. Jeg er Heimdallr, den, som vogter "
+        "over denne Server. Fortæl mig dit niveau af dansk, så jeg kan tildele "
+        "dig den rette rolle. Frygt ej, hvis du har spørgsmål, for vore "
+        "moderatorer og mentorer svarer gerne på dem."
     )
     await channel.send(f"{msg}\n\n{msg_dk}")
 
@@ -34,12 +34,12 @@ async def on_member_remove(member):
     channel = member.guild.system_channel
     msg = (
         ":rainbow: "
-        f"Farewell, {member.display_name}. As brave as you may feel it is dangerous "
+        f"Farewell, {member.display_name}. As brave as you may feel, it is dangerous "
         "beyond these halls!"
     )
     msg_dk = (
         ":rainbow: "
-        f"Farvel, {member.display_name}. Så tapper som du end føler du er, "
+        f"Farvel, {member.display_name}. Hvor tapper du end føler, du er, "
         "så er det farligt hinsides disse sale!"
     )
     await channel.send(f"{msg}\n\n{msg_dk}")
