@@ -8,7 +8,7 @@ pylint = "*"
 autopep8 = "*"
 
 [packages]
-discord-py = {extras = ["voice"],file = "https://github.com/Rapptz/discord.py/archive/rewrite.zip"}
+discord-py = {extras = ["voice"],version = "*"}
 
 [requires]
 python_version = "3.6"
