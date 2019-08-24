@@ -1,5 +1,7 @@
 import os
+import asyncio
 from discord.ext import commands
+
 prefix = '!'
 bot = commands.Bot(command_prefix=prefix)
 
@@ -26,6 +28,7 @@ async def on_member_join(member):
         "dig den rette rolle. Frygt ej, hvis du har spørgsmål, for vore "
         "moderatorer og mentorer svarer gerne på dem."
     )
+    await asyncio.sleep(10)
     await channel.send(f"{msg}\n\n{msg_dk}")
 
 
